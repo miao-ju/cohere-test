@@ -1,0 +1,114 @@
+site_name: CohereTest
+
+repo_url: https://github.com/miao-ju/cohere-test
+repo_name: miao-ju/cohere-test
+
+theme:
+
+  name: material
+  language: en
+
+  palette:
+
+    # palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: red
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+    - navigation.sections
+    - header.autohide
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - content.code.copy
+    - content.code.annotate
+
+  icon:
+    repo: fontawesome/brands/github
+    annotation: material/arrow-right-circle
+
+extra:
+  generator: false
+
+plugins:
+  - search
+
+markdown_extensions:
+
+  # tooltips
+  - abbr
+  - attr_list
+  - pymdownx.snippets
+
+  # annotations (w/ attr_list)
+  - md_in_html
+  - pymdownx.superfences
+
+  # admonitions (w/ pymdownx.superfences)
+  - admonition
+  - pymdownx.details
+
+  # custom lists
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # code blocks (w/ pydownx.snippets, pydownx.superfences)
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+
+  # tabs (w/ pymdownx.superfences)
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # footnotes
+  - footnotes
+
+  # formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # smart symbols
+  - pymdownx.smartsymbols
+
+  # maths
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2023 Miao Ju
+
+nav:
+  - index.md
+  - Examples:
+    - Classify: classify.md
+    - RAG Chat: rag.md
+    - Summarize: summarize.md
